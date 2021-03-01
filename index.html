@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 33.33%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: blueviolet;}
+#Contact {background-color: blue;}
+#Gallery {background-color: orange;}
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, 'blueviolet')"id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+<button class="tablink" onclick="openPage('Gallery', this, 'orange')">Gallery</button>
+
+<div id="Home" class="tabcontent">
+    <center><h3>You are in Home Page</h3></center>
+    <center><h3>This is your first Git project for Azure</h3></center>
+</div>
+
+<div id="Contact" class="tabcontent">
+<center>Shivam prakash <br><br></center>
+<center>20mca1175@cuchd.in <br><br></center>
+
+
+</div>
+
+<div id="Gallery" class="tabcontent">
+<center><img src="bg2.jpg" alt="image" width="500" height="333"></center>
+  <center><p>Shivam Prakash</p></center>
+  <center><p>MCA</p></center>
+  <center><p>Chandigarh University</p></center>
+  <center><p>Mohali, Punjab</p></center>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
